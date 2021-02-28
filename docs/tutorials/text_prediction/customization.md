@@ -118,7 +118,7 @@ def electra_small_basic_demo_hpo():
     search_space['optimization.lr'] = ag.core.space.Real(1E-5, 2E-4)
     search_space['optimization.wd'] = ag.core.space.Categorical(1E-4, 1E-3, 1E-2)
     search_space['optimization.num_train_epochs'] = 5
-    hparams['tune_kwargs']['search_strategy'] = 'random'
+    hparams['tune_kwargs']['search_strategy'] = 'local_sequential_auto'
     return hparams
 ```
 
